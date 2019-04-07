@@ -1,5 +1,7 @@
 # Auto refreshing with Browsersync
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/JCZIbd_LtMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Installation
 
 Ensure `node` and `npm` are installed. Instructions are in the Getting setup guide.
@@ -94,7 +96,7 @@ The "coffee/index.html" file would be visible in a browser at: [http://localhost
 
 ## Stopping the server
 
-Use the Command+C key combination in the terminal to stop the server.
+Use the Control+C key combination in the terminal to stop the server.
 
 ```bash
 ^C
