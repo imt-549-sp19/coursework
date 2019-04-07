@@ -1,2 +1,35 @@
+*
+    box-sizing: border-box; /* include padding and border is size calcs */
+
 .inline
-    background-color: #333;
+    background-color: #eee;
+
+.content a
+        text-decoration: underline;
+
+.content a:hover
+    text-decoration: none;
+
+.content .flex-row
+    display: flex;          /* start a flexbox */
+
+
+.content .flex-column
+    flex-grow: 1;           /* all columns equal size */
+    padding-left: 0.25em;   /* a little padding inside each col */
+    padding-right: 0.25em;
+
+/* rules for screens 780px and wider */
+.content .flex-row-md
+    @media (min-width: 780px)
+        display: flex;
+        
+.content .flex-row
+    @media (min-width: 780px)
+        display: flex;
+
+.content .flex-column
+    @media (min-width: 780px)
+        flex-grow: 1;
+        padding-left: 0.25em;
+        padding-right: 0.25em;

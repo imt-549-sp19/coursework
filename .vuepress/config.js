@@ -14,7 +14,8 @@ module.exports = {
         "/github-pages",
         "/emmet-autocomplete",
         "/browsersync",
-        "/adding-css"
+        "/adding-css",
+        "responsive"
     ]
   }
 };
