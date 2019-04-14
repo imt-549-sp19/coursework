@@ -266,5 +266,7 @@ Setting `margin-left` and `margin-right` to `auto` will ensure that the containe
 
 To experience what this looks like, just resize your browser window. This site was built using the same technique as Bootstrap, and the tutorial content is inside a similar container element. You'll notice that the text will grow in size as you make the screen wider, but only up to a maximum of `1170px`. This keeps the line-lengths reasonable so that they are easy to read even when the browser window is very wide.
 
-Keep Learning
+## Keep Learning
+
 This is just a taste of what media rules and flexbox can do. See Chris Coyier's [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for more details. Then play [Flexbox Froggy](http://flexboxfroggy.com/) to test your understanding of flexbox layout!
+

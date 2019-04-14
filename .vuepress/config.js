@@ -15,7 +15,8 @@ module.exports = {
         "/emmet-autocomplete",
         "/browsersync",
         "/adding-css",
-        "responsive"
+        "/responsive",
+        "/css-frameworks"
     ]
   }
 };
