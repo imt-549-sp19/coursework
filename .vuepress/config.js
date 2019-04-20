@@ -17,7 +17,8 @@ module.exports = {
         "/adding-css",
         "/using-chrome-inspector",
         "/responsive",
-        "/css-frameworks"
+        "/css-frameworks",
+        "/javascript-intro"
     ]
   }
 };
