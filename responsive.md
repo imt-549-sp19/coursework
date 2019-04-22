@@ -1,5 +1,7 @@
 # Responding to devices
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/xhva-UIA_9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 These days the majority of people accessing any web site you build [will be using a small mobile touchscreen device](https://searchenginewatch.com/sew/opinion/2353616/mobile-now-exceeds-pc-the-biggest-shift-since-the-internet-began). But there will still be a [significant minority](http://gs.statcounter.com/platform-market-share/desktop-mobile-tablet) who will access that same site from a laptop or desktop device with a much larger monitor. This poses an interesting design dilemma: how do we build one site that looks and works well on both a tiny phone screen as well as a gigantic desktop monitor?
 
 There is no one magic formula for this, but there are some best practices, as well as some powerful CSS features that let us adjust our page's appearance and layout based on the screen size.
