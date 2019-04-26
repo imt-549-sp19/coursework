@@ -29,20 +29,20 @@ All of the style rules we saw in the [Adding CSS Style Tutorial](adding-css.html
 ```css
 /* rules that apply to all devices */
 body {
-    background-color: rgb(255,64,129); /* background color on small screens */
-    font-size: 16px;                   /* default font size is 16 pixels */
+  background-color: rgb(255, 64, 129); /* background color on small screens */
+  font-size: 16px; /* default font size is 16 pixels */
 }
 
 /* rules that apply only to screens 768 pixels and wider */
 @media (min-width: 768px) {
-    body {
-        background-image: url(...);   /* use background image on larger screens */
-        font-size: 18px;              /* increase font size to 18 pixels on larger screens */
-    }
+  body {
+    background-image: url(...); /* use background image on larger screens */
+    font-size: 18px; /* increase font size to 18 pixels on larger screens */
+  }
 
-    .mobile-call-icon {
-        display: none;                /* hide mobile call icon */
-    }
+  .mobile-call-icon {
+    display: none; /* hide mobile call icon */
+  }
 }
 ```
 
@@ -56,36 +56,38 @@ The rules inside the `@media` rule can alter the formatting of any element, incl
 
 ## Flexbox
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/cRs_LHUz3H4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 On narrow screens content blocks should typically stack on top of each other, but on wider screens we should take advantage of the extra room and display at least some content blocks side-by-side. In the past, we used the float and clear properties to achieve multi-column layouts, but this technique was fraught with bugs due to browser inconsistencies. Thankfully, there is a newer standard specifically designed for multi-column layouts: Flexbox.
 
 Flexbox requires one element to act as the row element, and one element per column in your layout. To make a two-column layout, your HTML and CSS would be like this:
 
 ```html
 <div class="flex-row">
-    <div class="flex-column">
-        <h2>Column 1</h2>
-        <p>...</p>
-    </div>
-    <div class="flex-column">
-        <h2>Column 2</h2>
-        <p>...</p>
-    </div>
+  <div class="flex-column">
+    <h2>Column 1</h2>
+    <p>...</p>
+  </div>
+  <div class="flex-column">
+    <h2>Column 2</h2>
+    <p>...</p>
+  </div>
 </div>
 ```
 
 ```css
 * {
-    box-sizing: border-box; /* include padding and border is size calcs */
+  box-sizing: border-box; /* include padding and border is size calcs */
 }
 
 .flex-row {
-    display: flex;          /* start a flexbox */
+  display: flex; /* start a flexbox */
 }
 
 .flex-column {
-    flex-grow: 1;           /* all columns equal size */
-    padding-left: 0.25em;   /* a little padding inside each col */
-    padding-right: 0.25em;
+  flex-grow: 1; /* all columns equal size */
+  padding-left: 0.25em; /* a little padding inside each col */
+  padding-right: 0.25em;
 }
 ```
 
@@ -118,20 +120,20 @@ The above example creates a multi-column layout on all screens, but we can make 
 
 ```css
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* rules for screens 780px and wider */
 @media (min-width: 780px) {
-    .flex-row {
-        display: flex;
-    }
+  .flex-row {
+    display: flex;
+  }
 
-    .flex-column {
-        flex-grow: 1;
-        padding-left: 0.25em;
-        padding-right: 0.25em;
-    }
+  .flex-column {
+    flex-grow: 1;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
 }
 ```
 
@@ -154,28 +156,28 @@ What if we have four columns, and we want them all to stack on top of each other
 
 ```css
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* rules for screens 768px and wider */
 @media (min-width: 768px) {
-    .flex-row {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .flex-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .flex-column {
-        flex-basis: 50%;
-        padding-left: 0.25em;
-        padding-right: 0.25em;
-    }
+  .flex-column {
+    flex-basis: 50%;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
 }
 
 /* rules for screens 1200px and wider */
 @media (min-width: 1200px) {
-    .flex-column {
-        flex-basis: 25%;
-    }
+  .flex-column {
+    flex-basis: 25%;
+  }
 }
 ```
 
@@ -189,28 +191,28 @@ In all of these examples, we are setting the `flex-basis` of all columns to be t
 
 ```css
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .flex-row {
-    flex-grow: 1;
-    display: flex;
+  flex-grow: 1;
+  display: flex;
 }
 
 /* styles for all columns */
 .flex-column {
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
 }
 
 /* styles for the left/right side columns */
 .flex-column-sides {
-    flex-basis: 10%;
+  flex-basis: 10%;
 }
 
 /* styles for center column */
 .flex-column-center {
-    flex-basis: 80%;
+  flex-basis: 80%;
 }
 ```
 
@@ -218,7 +220,7 @@ Remember that you can add multiple style classes to an HTML element (separated b
 
 ```html
 <div class="flex-column flex-column-center">
-    ...
+  ...
 </div>
 ```
 
@@ -239,28 +241,28 @@ For example, this is how a previous (not the latest) version of the popular [CSS
 
 ```css
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
+  .container {
+    width: 750px;
+  }
 }
 
 @media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
+  .container {
+    width: 970px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
+  .container {
+    width: 1170px;
+  }
 }
 ```
 
@@ -271,4 +273,3 @@ To experience what this looks like, just resize your browser window. This site w
 ## Keep Learning
 
 This is just a taste of what media rules and flexbox can do. See Chris Coyier's [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for more details. Then play [Flexbox Froggy](http://flexboxfroggy.com/) to test your understanding of flexbox layout!
-
