@@ -19,7 +19,10 @@ module.exports = {
         "/responsive",
         "/css-frameworks",
         "/javascript-intro",
-        "/javascript-dom"
+        "/javascript-dom",
+        "/javascript-iteration",
+        "/javascript-sorting",
+        "/javascript-ajax"
     ]
   }
 };
