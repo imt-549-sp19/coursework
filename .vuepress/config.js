@@ -18,7 +18,8 @@ module.exports = {
         "/using-chrome-inspector",
         "/responsive",
         "/css-frameworks",
-        "/javascript-intro"
+        "/javascript-intro",
+        "/javascript-dom"
     ]
   }
 };
