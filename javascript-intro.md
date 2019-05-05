@@ -1,5 +1,7 @@
 # Introduction to Javascript
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/mmECQQctN-Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Javascript can be thought about as the 'interactivity' of a website. Before we get started integrating Javascript with our pages, we must first get an introduction to programming and the basics of the Javascript languages.
 
 ## Required reading
