@@ -1,5 +1,7 @@
 # DOM manipulation
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/tIahi41c7ds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Now that you know the basics of the JavaScript language, we can learn how to use that language to add some interactivity to our web pages. Specifically, we will learn how to respond to user interactions, modify the contents of elements, and add/remove style classes to alter formatting.
 
 ## Adding scripts to the page
