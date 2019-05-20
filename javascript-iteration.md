@@ -1,5 +1,7 @@
 # Javascript iteration
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/NWi9Y0jYP4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Now that you know how to work with data in JavaScript, and how to alter the page using the DOM, it's time to put the two together and create data-driven web pages.
 
 So far you've created pages where you've typed in all of the content by hand, but in many cases, you will want at least some of that content to be derived from data that are stored separately and change over time. Wouldn't it be cool if you could dynamically build some of your page's content based on some data you have in JavaScript as an array of objects? Well, you're in luck; the DOM provides us mechanisms to do just that.
