@@ -1,5 +1,7 @@
 # Javascript AJAX
 
+<iframe width="725" height="408" src="https://www.youtube.com/embed/T6yFfXmnRl0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Now that you know how to create page content from data stored in a local variable, the next logical step is to learn how to fetch those data dynamically from a web service. This allows you to get up-to-date data each time your page loads, and even automatically refresh those data while the user remains on the page. JavaScript allow us to make requests to other web services, and process the results, without navigating or refreshing the page.
 
 ## AJAX
@@ -28,11 +30,11 @@ JSON was also very familiar to JavaScript developers, as it looks almost identic
 
 ```json
 {
-    "id": 42,
-    "fname": "John",
-    "lname": "Doe",
-    "active": true,
-    "description": null
+  "id": 42,
+  "fname": "John",
+  "lname": "Doe",
+  "active": true,
+  "description": null
 }
 ```
 
@@ -55,11 +57,12 @@ And to generate JSON, you can use `JSON.stringify()`:
 
 ```javascript
 //create a JavaScript object
-var obj = {id: 43, fname: "Jane", lname: "Lee"};
+var obj = { id: 43, fname: "Jane", lname: "Lee" };
 
 //convert to JSON-encoded string
 var json = JSON.stringify(obj);
 ```
+
 JSON quickly displaced XML as the data-encoding format of choice for web applications, and [parsers were developed for all major programming languages](http://www.json.org/). We still refer to the general technique as "AJAX", but it's rare to find a web application these days that uses XML as the primary data-encoding format.
 
 ## The `fetch()` Function
@@ -76,20 +79,20 @@ request.open("GET", "/my/data/url", true);
 //add a listener for the "load" event, which
 //will happen when the data returns
 request.addEventListener("load", function() {
-    if (request.status >= 200 && request.status < 400) {
-        // Success!
-        var data = JSON.parse(request.responseText);
-    } else {
-        // We reached our target server, but it returned an error
-        //handle error...
-    }
+  if (request.status >= 200 && request.status < 400) {
+    // Success!
+    var data = JSON.parse(request.responseText);
+  } else {
+    // We reached our target server, but it returned an error
+    //handle error...
+  }
 });
 
 //add a listener for the "error" event, which
 //will happen if there was a network error
 request.addEventListener("error", function() {
-    //handle error...
-})
+  //handle error...
+});
 
 //finally, send the request to the server
 request.send();
@@ -102,7 +105,7 @@ That's quite a lot of code for a rather simple operation. Understandably, develo
 //second parameter is a function to be called when the request
 //is complete and the data has been returned
 $.getJSON("/my/data/url", function(data) {
-    //`data` is the already-parsed JSON data returned from the server
+  //`data` is the already-parsed JSON data returned from the server
 });
 ```
 
@@ -112,7 +115,7 @@ The result was the `fetch()` API, which is now [supported in all major browsers]
 
 A **polyfill** library is one that adds a feature that is not yet supported natively by the browser by implementing that feature in JavaScript using existing functionality. The fetch polyfill implements the new `fetch()` function using the existing `XMLHttpRequest` interface. If the library detects the native implementation, it simply exits and does nothing.
 
-To add the `fetch()` polyfill library [from its CDN](https://cdnjs.com/libraries/fetch), simply include this `script` element in your HTML page, *before* any script where you use the `fetch()` function:
+To add the `fetch()` polyfill library [from its CDN](https://cdnjs.com/libraries/fetch), simply include this `script` element in your HTML page, _before_ any script where you use the `fetch()` function:
 
 ```javascript
 <!-- fetch() polyfill, version 2.0.1 -->
@@ -134,8 +137,8 @@ var promise = fetch("/my/data/url");
 
 //add a function to be called when the request completes successfully
 promise.then(function(response) {
-    //parse response as JSON
-    return response.json();
+  //parse response as JSON
+  return response.json();
 });
 ```
 
@@ -143,20 +146,19 @@ Declaring that intermediate variable `promise` is unnecessary in JavaScript, so 
 
 ```javascript
 fetch("/my/data/url").then(function(response) {
-    //parse response as JSON
-    return response.json();
+  //parse response as JSON
+  return response.json();
 });
 ```
 
 And to make the code a bit more readable, we typically insert a line break after the call to `fetch()` and before the call to the Promise's `.then()` method:
 
 ```javascript
-fetch("/my/data/url")
-    .then(function(response) {
-        //this is called after the server responds to our request
-        //parse response as JSON
-        return response.json();
-    });
+fetch("/my/data/url").then(function(response) {
+  //this is called after the server responds to our request
+  //parse response as JSON
+  return response.json();
+});
 ```
 
 The function we pass to the Promise's `.then()` method will be called once the server begins to respond. The `response` object passed to this function as the first parameter allows us to do several things, but most commonly, you will want to parse the response body as JSON-encoded data. To do that, simply `return response.json()`.
@@ -165,15 +167,15 @@ The `response.json()` method is another asynchronous operation, so it actually r
 
 ```javascript
 fetch("/my/data/url")
-    .then(function(response) {
-        //parse response as JSON
-        return response.json();
-    })
-    .then(function(data) {
-        //this is called after the JSON parsing is complete
-        //`data` will be the parsed data (Object or Array)
-        console.log(data)
-    });
+  .then(function(response) {
+    //parse response as JSON
+    return response.json();
+  })
+  .then(function(data) {
+    //this is called after the JSON parsing is complete
+    //`data` will be the parsed data (Object or Array)
+    console.log(data);
+  });
 ```
 
 The return value of the first `.then()` method is the same Promise object, so syntactically we can keep chaining `.then()` methods, one after the other.
@@ -184,21 +186,21 @@ To respond to a network failure, we can use the Promise's `.catch()` method to r
 
 ```javascript
 fetch("/my/data/url")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        console.log(data)
-    })
-    .catch(function(err) {
-        //write the full error object to the console
-        console.error(err);
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(err) {
+    //write the full error object to the console
+    console.error(err);
 
-        //show the error message to the user
-        //you could instead set the `.textContent` of some
-        //DOM element you use to show errors
-        alert(err.message);
-    });
+    //show the error message to the user
+    //you could instead set the `.textContent` of some
+    //DOM element you use to show errors
+    alert(err.message);
+  });
 ```
 
 The really nice thing about Promises is that the function we pass to `.catch()` will be called if any error occurs either during the fetch, or in the JSON parsing. If any of the functions passed to `.then()` cause an error to occur, execution will automatically jump to your `.catch()` function, skipping any intermediary `.then()` functions. This allows you to centralize your error handling in one place, and avoid calling code that depends upon the previous code executing without errors.
@@ -217,35 +219,36 @@ Once we fetch this data and parse it as JSON, we can render it to an HTML table,
 
 ```javascript
 //last 24-hours of data from Fremont Bridge bike traffic
-var dataURL = "https://data.seattle.gov/resource/4xy5-26gy.json?$order=date%20desc&$limit=24";
+var dataURL =
+  "https://data.seattle.gov/resource/4xy5-26gy.json?$order=date%20desc&$limit=24";
 
 function parseAsJSON(response) {
-    return response.json();
+  return response.json();
 }
 
 function handleError(err) {
-    console.error(err);
-    alert(err.message);
+  console.error(err);
+  alert(err.message);
 }
 
 function renderRecord(record) {
-    //create a <tr> and <td> elements for each property
-    //...
+  //create a <tr> and <td> elements for each property
+  //...
 }
 
 function renderTable(data) {
-    //`data` is an array of objects
-    //loop over the array calling renderRecord()
-    //for each record, and appending the returned
-    //<tr> to the <tbody>
-    //...
+  //`data` is an array of objects
+  //loop over the array calling renderRecord()
+  //for each record, and appending the returned
+  //<tr> to the <tbody>
+  //...
 }
 
 //fetch the data
 fetch(dataURL)
-    .then(parseAsJSON)
-    .then(renderTable)
-    .catch(handleError);
+  .then(parseAsJSON)
+  .then(renderTable)
+  .catch(handleError);
 ```
 
 Because the parsing as JSON and handling of errors is something that will be similar for all `fetch()` requests, it makes sense to define these functions once and simply pass a reference to them to the `.then()` and `.catch()` methods. I also defined a function for the table rendering, similar to what we had done before. When passing just the function names (i.e., references), it makes the Promise chain read almost like English: "fetch this URL, then parse it as JSON, then render it to a table, and handle any errors that happen along the way."
